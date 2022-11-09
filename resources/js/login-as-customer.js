@@ -1,1 +1,1 @@
-Vue.component('login-as-customer', require('./components/LoginAsCustomer.vue').default)
+Vue.component('login-as-customer', () => import('./components/LoginAsCustomer.vue'))
