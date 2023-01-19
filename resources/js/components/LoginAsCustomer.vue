@@ -50,7 +50,7 @@ export default {
                 await window.app.$emit('logged-in')
                 await this.refreshCart()
 
-                Turbolinks.visit('/account')
+                Turbo.visit('/account')
             } catch (error) {
                 Notify(error.response.data.message, 'error')
             }
