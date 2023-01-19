@@ -1,4 +1,11 @@
-# Changelog
+# Changelog 
+
+## 0.2.0 - 2023-01-19
+
+### Changed
+
+- Replace turbolinks with turbo (#2)
+- Add changelog action (8eac2ba)
 
 ## 0.1.2 - 2022-11-10
 
@@ -12,6 +19,7 @@
 
 - Changelog (66d323c)
 
-## [0.1.0](https://github.com/rapidez/login-as-customer/compare/e0d3ef03605832934fb6f98e051a4a07d5b5983c...0.1.0) - 2022-07-12
+## 0.1.0 - 2022-07-12
 
 Initial release
+
