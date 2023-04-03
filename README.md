@@ -8,11 +8,6 @@ Gives the possibility to an admin to login as a customer. Instead of the button 
 composer require rapidez/login-as-customer
 ```
 
-Make sure this exists in your `app.js`:
-```js
-import.meta.glob(['Vendor/rapidez/*/resources/js/app.js'], { eager: true });
-```
-
 ## Views
 
 If you need to change the view you can publish it with:
