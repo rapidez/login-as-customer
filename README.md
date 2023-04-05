@@ -4,21 +4,15 @@ Gives the possibility to an admin to login as a customer. Instead of the button 
 
 ## Installation
 
-```
+```bash
 composer require rapidez/login-as-customer
-```
-
-Add to your `resources/js/app.js`
-
-```
-require('Vendor/rapidez/login-as-customer/resources/js/login-as-customer.js');
 ```
 
 ## Views
 
 If you need to change the view you can publish it with:
 
-```
+```bash
 php artisan vendor:publish --provider="Rapidez\LoginAsCustomer\LoginAsCustomerServiceProvider" --tag=views
 ```
 
