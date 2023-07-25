@@ -42,8 +42,9 @@ export default {
                     return
                 }
 
-                localStorage.token = tokenResponse.data.data.generateCustomerTokenAsAdmin.customer_token
-                window.magentoUser.defaults.headers.common['Authorization'] = `Bearer ${localStorage.token}`;
+                let token = useLocalStorage('token', '');
+                token.value = tokenResponse.data.data.generateCustomerTokenAsAdmin.customer_token
+                window.magentoUser.defaults.headers.common['Authorization'] = `Bearer ${token.value}`;
 
                 await this.refreshUser(false)
                 this.setCheckoutCredentialsFromDefaultUserAddresses()
