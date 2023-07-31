@@ -1,4 +1,5 @@
 <script>
+import { useLocalStorage } from '@vueuse/core'
 import InteractWithUser from 'Vendor/rapidez/core/resources/js/components/User/mixins/InteractWithUser'
 import GetCart from 'Vendor/rapidez/core/resources/js/components/Cart/mixins/GetCart'
 
