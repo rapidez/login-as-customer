@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/login-as-customer/compare/0.3.1...master)
+[Unreleased changes](https://github.com/rapidez/login-as-customer/compare/0.4.0...master)
+## [0.4.0](https://github.com/rapidez/login-as-customer/releases/tag/0.4.0) - 2023-08-01
+
+### Changed
+
+- Use useLocalStorage (#5, #6)
+
 ## [0.3.1](https://github.com/rapidez/login-as-customer/releases/tag/0.3.1) - 2023-07-04
 
 ### Fixed
