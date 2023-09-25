@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/login-as-customer/compare/0.4.0...master)
+[Unreleased changes](https://github.com/rapidez/login-as-customer/compare/0.4.1...master)
+## [0.4.1](https://github.com/rapidez/login-as-customer/releases/tag/0.4.1) - 2023-09-22
+
+### Added
+
+- Laravel 10 support (9248435)
+
 ## [0.4.0](https://github.com/rapidez/login-as-customer/releases/tag/0.4.0) - 2023-08-01
 
 ### Changed
