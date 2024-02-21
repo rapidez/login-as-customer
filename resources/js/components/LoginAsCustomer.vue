@@ -1,10 +1,10 @@
 <script>
 import { useLocalStorage } from '@vueuse/core'
+import { refresh as refreshCart } from 'Vendor/rapidez/resources/js/stores/useCart'
 import InteractWithUser from 'Vendor/rapidez/core/resources/js/components/User/mixins/InteractWithUser'
-import GetCart from 'Vendor/rapidez/core/resources/js/components/Cart/mixins/GetCart'
 
 export default {
-    mixins: [GetCart, InteractWithUser],
+    mixins: [InteractWithUser],
 
     render() {
         return this.$scopedSlots.default({
@@ -50,7 +50,7 @@ export default {
                 await this.refreshUser(false)
                 this.setCheckoutCredentialsFromDefaultUserAddresses()
                 await window.app.$emit('logged-in')
-                await this.refreshCart()
+                await refreshCart()
 
                 Turbo.visit(window.url('/account'))
             } catch (error) {
