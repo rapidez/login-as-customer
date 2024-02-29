@@ -1,6 +1,6 @@
 <script>
 import { useLocalStorage } from '@vueuse/core'
-import { refresh as refreshCart } from 'Vendor/rapidez/resources/js/stores/useCart'
+import { refresh as refreshCart } from 'Vendor/rapidez/core/resources/js/stores/useCart'
 import InteractWithUser from 'Vendor/rapidez/core/resources/js/components/User/mixins/InteractWithUser'
 
 export default {
