@@ -25,27 +25,24 @@ export default {
     methods: {
         async login() {
             try {
-                let adminResponse = await magento.post('integration/admin/token', {
+                let adminResponse = await window.magentoAPI('post', 'integration/admin/token', {
                     username: this.username,
                     password: this.password,
                 })
 
-                let tokenResponse = await axios.post(config.magento_url + '/graphql', {
-                    query: 'mutation token($customer: String!) { generateCustomerTokenAsAdmin( input: { customer_email: $customer }) { customer_token } }',
-                    variables: { customer: this.customer },
-                }, { headers: {
-                    Authorization: 'Bearer ' + adminResponse.data,
-                    Store: window.config.store_code,
-                }})
+                let tokenResponse = await window.magentoGraphQL(
+                    'mutation token($customer: String!) { generateCustomerTokenAsAdmin( input: { customer_email: $customer }) { customer_token } }',
+                    { customer: this.customer },
+                    { headers: { Authorization: 'Bearer ' + adminResponse} }
+                )
 
-                if (tokenResponse.data.errors) {
-                    Notify(tokenResponse.data.errors[0].message, 'error')
+                if (tokenResponse.errors) {
+                    Notify(tokenResponse.errors[0].message, 'error')
                     return
                 }
 
                 let token = useLocalStorage('token', '');
-                token.value = tokenResponse.data.data.generateCustomerTokenAsAdmin.customer_token
-                window.magentoUser.defaults.headers.common['Authorization'] = `Bearer ${token.value}`;
+                token.value = tokenResponse.data.generateCustomerTokenAsAdmin.customer_token
 
                 await this.refreshUser(false)
                 this.setCheckoutCredentialsFromDefaultUserAddresses()
@@ -54,7 +51,7 @@ export default {
 
                 Turbo.visit(window.url('/account'))
             } catch (error) {
-                Notify(error.response.data.message, 'error')
+                Notify(error.response.message, 'error')
             }
         },
 
