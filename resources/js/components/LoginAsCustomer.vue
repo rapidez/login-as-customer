@@ -1,5 +1,5 @@
 <script>
-import { useLocalStorage } from '@vueuse/core'
+import { token } from 'Vendor/rapidez/core/resources/js/stores/useUser'
 import { refresh as refreshCart } from 'Vendor/rapidez/core/resources/js/stores/useCart'
 import InteractWithUser from 'Vendor/rapidez/core/resources/js/components/User/mixins/InteractWithUser'
 
@@ -41,7 +41,6 @@ export default {
                     return
                 }
 
-                let token = useLocalStorage('token', '');
                 token.value = tokenResponse.data.generateCustomerTokenAsAdmin.customer_token
 
                 await this.refreshUser(false)
