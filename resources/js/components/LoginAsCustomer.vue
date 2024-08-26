@@ -51,7 +51,7 @@ export default {
 
                 Turbo.visit(window.url('/account'))
             } catch (error) {
-                Notify(error.response.message, 'error')
+                Notify(error.message, 'error')
             }
         },
 
