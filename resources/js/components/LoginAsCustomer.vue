@@ -1,6 +1,6 @@
 <script>
 import { token } from 'Vendor/rapidez/core/resources/js/stores/useUser'
-import { refresh as refreshCart } from 'Vendor/rapidez/core/resources/js/stores/useCart'
+import { fetchCustomerCart } from 'Vendor/rapidez/core/resources/js/stores/useCart'
 import InteractWithUser from 'Vendor/rapidez/core/resources/js/components/User/mixins/InteractWithUser'
 
 export default {
@@ -46,7 +46,7 @@ export default {
                 await this.refreshUser(false)
                 this.setCheckoutCredentialsFromDefaultUserAddresses()
                 await window.app.$emit('logged-in')
-                await refreshCart()
+                await fetchCustomerCart()
 
                 Turbo.visit(window.url('/account'))
             } catch (error) {
