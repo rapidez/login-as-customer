@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/login-as-customer/compare/2.0.1...master)
+[Unreleased changes](https://github.com/rapidez/login-as-customer/compare/2.0.2...2.0.2)
+## [2.0.2](https://github.com/rapidez/login-as-customer/releases/tag/2.0.2) - 2024-08-29
+
+### Fixed
+
+- Fix existing guest cart causing error (#12)
+
 ## [2.0.1](https://github.com/rapidez/login-as-customer/releases/tag/2.0.1) - 2024-08-27
 
 ### Fixed
