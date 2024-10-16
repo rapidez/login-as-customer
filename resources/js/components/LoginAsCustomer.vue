@@ -1,19 +1,10 @@
 <script>
 import { token } from 'Vendor/rapidez/core/resources/js/stores/useUser'
-import { fetchCustomerCart } from 'Vendor/rapidez/core/resources/js/stores/useCart'
-import InteractWithUser from 'Vendor/rapidez/core/resources/js/components/User/mixins/InteractWithUser'
+import { fetchCustomerCart, refresh as refreshCustomer } from 'Vendor/rapidez/core/resources/js/stores/useCart'
 
 export default {
-    mixins: [InteractWithUser],
-
     render() {
-        return this.$scopedSlots.default({
-            inputChange: this.inputChange,
-            username: this.username,
-            password: this.password,
-            customer: this.customer,
-            login: this.login,
-        })
+        return this.$scopedSlots.default(this)
     },
 
     data: () => ({
@@ -42,9 +33,7 @@ export default {
                 }
 
                 token.value = tokenResponse.data.generateCustomerTokenAsAdmin.customer_token
-
-                await this.refreshUser(false)
-                this.setCheckoutCredentialsFromDefaultUserAddresses()
+                await refreshCustomer()
                 await window.app.$emit('logged-in')
                 await fetchCustomerCart()
 
@@ -52,11 +41,7 @@ export default {
             } catch (error) {
                 Notify(error.message, 'error')
             }
-        },
-
-        inputChange(e) {
-            this[e.target.id] = e.target.value
-        },
+        }
     },
 }
 </script>
