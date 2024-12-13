@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/login-as-customer/compare/2.0.2...2.0.2)
+[Unreleased changes](https://github.com/rapidez/login-as-customer/compare/3.0.0...3.0.0)
+## [3.0.0](https://github.com/rapidez/login-as-customer/releases/tag/3.0.0) - 2024-12-13
+
+### Added
+
+- Rapidez v3 support (#13)
+
 ## [2.0.2](https://github.com/rapidez/login-as-customer/releases/tag/2.0.2) - 2024-08-29
 
 ### Fixed
