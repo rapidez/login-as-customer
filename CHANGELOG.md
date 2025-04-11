@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/login-as-customer/compare/3.0.0...3.0.0)
+[Unreleased changes](https://github.com/rapidez/login-as-customer/compare/3.1.0...3.1.0)
+## [3.1.0](https://github.com/rapidez/login-as-customer/releases/tag/3.1.0) - 2025-04-10
+
+### Changed
+
+- Handle the Laravel requirement through the core requirement (1e80d75)
+
 ## [3.0.0](https://github.com/rapidez/login-as-customer/releases/tag/3.0.0) - 2024-12-13
 
 ### Added
