@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/login-as-customer/compare/3.1.0...3.1.0)
+[Unreleased changes](https://github.com/rapidez/login-as-customer/compare/3.1.1...3.1.1)
+## [3.1.1](https://github.com/rapidez/login-as-customer/releases/tag/3.1.1) - 2025-07-29
+
+### Fixed
+
+- Form labels fix (#15)
+
 ## [3.1.0](https://github.com/rapidez/login-as-customer/releases/tag/3.1.0) - 2025-04-10
 
 ### Changed
