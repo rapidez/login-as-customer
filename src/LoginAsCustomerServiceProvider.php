@@ -20,6 +20,14 @@ class LoginAsCustomerServiceProvider extends ServiceProvider
             __DIR__.'/../resources/views' => resource_path('views/vendor/rapidez'),
         ], 'views');
 
-        Route::view('login-as-customer', 'rapidez::login-as-customer');
+        $this->bootRoutes();
+    }
+
+    protected function bootRoutes(): self
+    {
+        $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+
+        return $this;
     }
 }
