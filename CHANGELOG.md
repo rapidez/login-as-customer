@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/login-as-customer/compare/4.0.1...4.0.1)
+[Unreleased changes](https://github.com/rapidez/login-as-customer/compare/4.1.0...4.1.0)
+## [4.1.0](https://github.com/rapidez/login-as-customer/releases/tag/4.1.0) - 2025-09-30
+
+### Added
+
+- Login as customer admin button support (#16)
+
 ## [4.0.1](https://github.com/rapidez/login-as-customer/releases/tag/4.0.1) - 2025-07-29
 
 ### Fixed
