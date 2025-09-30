@@ -1,6 +1,5 @@
 <script>
-import { token } from 'Vendor/rapidez/core/resources/js/stores/useUser'
-import { fetchCustomerCart } from 'Vendor/rapidez/core/resources/js/stores/useCart'
+import { clear, loginByToken } from 'Vendor/rapidez/core/resources/js/stores/useUser'
 import InteractWithUser from 'Vendor/rapidez/core/resources/js/components/User/mixins/InteractWithUser'
 
 export default {
@@ -25,6 +24,8 @@ export default {
     methods: {
         async login() {
             try {
+                const clearPromise = clear()
+
                 let adminResponse = await window.magentoAPI('post', 'integration/admin/token', {
                     username: this.username,
                     password: this.password,
@@ -41,12 +42,9 @@ export default {
                     return
                 }
 
-                token.value = tokenResponse.data.generateCustomerTokenAsAdmin.customer_token
-
-                await this.refreshUser(false)
+                await clearPromise
+                await loginByToken(tokenResponse.data.generateCustomerTokenAsAdmin.customer_token)
                 this.setCheckoutCredentialsFromDefaultUserAddresses()
-                await window.app.$emit('logged-in')
-                await fetchCustomerCart()
 
                 Turbo.visit(window.url('/account'))
             } catch (error) {
