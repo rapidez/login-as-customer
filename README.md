@@ -8,6 +8,9 @@ Gives the possibility to an admin to login as a customer. Instead of the button 
 composer require rapidez/login-as-customer
 ```
 
+> [!TIP]
+> Install [rapidez/magento2-compadre](https://github.com/rapidez/magento2-compadre) to make the admin "Login As Customer" buttons work.
+
 ## Views
 
 If you need to change the view you can publish it with:
