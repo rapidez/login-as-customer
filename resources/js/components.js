@@ -1,4 +1,6 @@
-import 'Vendor/rapidez/core/resources/js/vue'
+import { defineAsyncComponent } from 'vue'
 
-Vue.component('login-as-customer', () => import('./components/LoginAsCustomer.vue'))
-Vue.component('login-as-customer-by-token', () => import('./components/LoginAsCustomerByToken.vue'))
+document.addEventListener('vue:loaded', function (event) {
+    event.detail.vue.component('login-as-customer', defineAsyncComponent(() => import('./components/LoginAsCustomer.vue')))
+    event.detail.vue.component('login-as-customer-by-token', defineAsyncComponent(() => import('./components/LoginAsCustomerByToken.vue')))
+})
