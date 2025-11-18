@@ -3,7 +3,7 @@ import { clear, loginByToken } from 'Vendor/rapidez/core/resources/js/stores/use
 
 export default {
     render() {
-        return this.$scopedSlots.default(this)
+        return this?.$slots?.default?.(this)
     },
 
     data: () => ({
