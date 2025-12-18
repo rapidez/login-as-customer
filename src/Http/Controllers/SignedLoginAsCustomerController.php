@@ -10,7 +10,7 @@ class SignedLoginAsCustomerController
     public function __invoke(Request $request)
     {
         $cache = Cache::store(config('cache.default'));
-        if (! $request->hasValidSignature(absolute: true) || ! $cache->has('login-as-customer-' . $request->get('key'))) {
+        if (! $request->hasValidSignature(absolute: false) || ! $cache->has('login-as-customer-' . $request->get('key'))) {
             return redirect()->route('login-as-customer');
         }
 
