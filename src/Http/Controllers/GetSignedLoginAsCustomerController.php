@@ -23,6 +23,16 @@ class GetSignedLoginAsCustomerController
         $cachekey = (string) Str::uuid();
         Cache::store(config('cache.default'))->put('login-as-customer-' . $cachekey, $data, static::URL_TIMEOUT);
 
-        return ['url' => URL::signedRoute('signed-login-as-customer', ['key' => $cachekey], static::URL_TIMEOUT)];
+        $currentUrl = url('/');
+        $urlParts = parse_url($currentUrl);
+        try {
+            // Temporarily force root url without subfolder since validation runs without subfolder.
+            URL::forceRootUrl($urlParts['scheme'] . '://' . $urlParts['host'] . '/');
+            $signedUrl = URL::signedRoute('signed-login-as-customer', ['key' => $cachekey], static::URL_TIMEOUT, absolute: false);
+        } finally {
+            URL::forceRootUrl($currentUrl);
+        }
+    
+        return ['url' => url($signedUrl)];
     }
 }
