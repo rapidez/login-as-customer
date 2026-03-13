@@ -9,7 +9,7 @@
         <h1 class="font-bold text-4xl mb-5">@lang('Login as customer')</h1>
         @if($token ?? '') 
             <login-as-customer-by-token token="{{ $token }}" v-slot="{ processing }">
-                <div v-cloak v-if="processing" class="bg-black bg-opacity-50 z-50 fixed inset-0 flex justify-items-center items-center">
+                <div v-cloak v-if="processing" class="bg-black/50 z-50 fixed inset-0 flex justify-items-center items-center">
                     <div class="flex-row justify-items-center items-center mx-auto">
                         <x-rapidez-loading class="size-10 text-gray-200 animate-spin fill-primary" />
                         <span class="text-white">@lang('Logging in...')</span>
