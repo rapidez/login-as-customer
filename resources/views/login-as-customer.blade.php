@@ -19,7 +19,7 @@
         @endif
 
         <login-as-customer v-slot="login" v-cloak>
-            <form class="p-8 border rounded w-[400px]" v-on:submit.prevent="login.login">
+            <form class="p-8 border rounded-sm w-[400px]" v-on:submit.prevent="login.login">
                 <label>
                     <x-rapidez::label>@lang('Admin username')</x-rapidez::label>
                     <x-rapidez::input v-model="login.username" name="username" required/>
