@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/login-as-customer/compare/2.1.0...2.1.0)
+[Unreleased changes](https://github.com/rapidez/login-as-customer/compare/2.2.0...2.2.0)
+## [2.2.0](https://github.com/rapidez/login-as-customer/releases/tag/2.2.0) - 2026-07-28
+
+### Added
+
+- Laravel 12 support (#22)
+
 ## [2.1.0](https://github.com/rapidez/login-as-customer/releases/tag/2.1.0) - 2025-09-30
 
 ### Added
